@@ -1,6 +1,10 @@
 // Configuration: Add your image filenames here
+// Newest images should be at the TOP of this list.
 const images = [
-    // Example format: { src: 'images/sample1.jpg', title: 'Cyberpunk City' }
+    // Test Image
+    { src: 'test_image_01.jpg', title: 'Autumn River (Test Image)' },
+
+    // Placeholders
     { src: 'https://via.placeholder.com/600x400/000000/d4af37?text=AI+Art+1', title: 'Future Concept 01' },
     { src: 'https://via.placeholder.com/600x400/1a1a1a/d4af37?text=AI+Art+2', title: 'Neon Portrait' },
     { src: 'https://via.placeholder.com/600x400/050505/f1c40f?text=AI+Art+3', title: 'Abstract Gold' },
@@ -46,7 +50,13 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => lightbox.classList.add('active'), 10);
 
         if (lightboxImg) lightboxImg.src = src;
-        if (downloadBtn) downloadBtn.href = src; // Set download link
+
+        if (downloadBtn) {
+            downloadBtn.href = src; // Set download link path
+            // Extract filename for the download attribute
+            const filename = src.substring(src.lastIndexOf('/') + 1);
+            downloadBtn.setAttribute('download', filename);
+        }
     }
 
     function closeLightbox() {
