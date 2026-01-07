@@ -1,19 +1,23 @@
 // Configuration: Add your image filenames here
-// Newest images should be at the TOP of this list.
+// Newest images should be at the TOP of each category.
+
 const images = [
     // 【ここに画像を追加してください】
+    // 'category' は 'desktop' (16:9) または 'mobile' (9:16) を指定してください。
     // 例:
     // {
-    //     src: 'uploads/my_image.jpg',
-    //     title: 'Image Title',
-    //     description: 'Image Description'
+    //     src: 'uploads/desktop_cyberpunk.jpg',
+    //     category: 'desktop',
+    //     title: 'Neon City',
+    //     description: 'サイバーパンクな都市の夜景。'
     // },
 
     // 現在は画像がありません。画像をアップロードしてここに追加してください。
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
-    const gallery = document.getElementById('gallery');
+    const galleryDesktop = document.getElementById('gallery-desktop');
+    const galleryMobile = document.getElementById('gallery-mobile');
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxDesc = document.getElementById('lightbox-desc');
@@ -33,21 +37,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Render Gallery using DOM API (Prevents HTML-as-text bug)
-    if (gallery) {
-        gallery.innerHTML = ''; // Clear any existing content
+    // Render Gallery Function
+    function renderGallery() {
+        // Clear existing content safely
+        if (galleryDesktop) galleryDesktop.innerHTML = '';
+        if (galleryMobile) galleryMobile.innerHTML = '';
+
+        if (images.length === 0) {
+            // Optional: Show "Coming Soon" message if empty (handled via CSS/HTML usually, but safe to leave empty)
+            return;
+        }
+
         images.forEach(image => {
             const card = document.createElement('div');
             card.className = 'card';
 
-            // Image
             const img = document.createElement('img');
             img.src = image.src;
             img.alt = image.title;
             img.className = 'card-image';
             img.loading = 'lazy';
 
-            // Overlay
             const overlay = document.createElement('div');
             overlay.className = 'card-overlay';
 
@@ -59,14 +69,21 @@ document.addEventListener('DOMContentLoaded', () => {
             card.appendChild(img);
             card.appendChild(overlay);
 
-            // Lightbox Event
             card.addEventListener('click', () => {
                 openLightbox(image);
             });
 
-            gallery.appendChild(card);
+            // Append to correct section
+            if (image.category === 'desktop' && galleryDesktop) {
+                galleryDesktop.appendChild(card);
+            } else if (image.category === 'mobile' && galleryMobile) {
+                galleryMobile.appendChild(card);
+            }
         });
     }
+
+    // Execute Render
+    renderGallery();
 
     // Lightbox Logic
     function openLightbox(imageObj) {
