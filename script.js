@@ -1,8 +1,6 @@
 // Configuration: Add your image filenames here
 const images = [
     // Example format: { src: 'images/sample1.jpg', title: 'Cyberpunk City' }
-    // Since we don't have images yet, I'll add some placeholder data.
-    // User should replace these with actual paths relative to this folder.
     { src: 'https://via.placeholder.com/600x400/000000/d4af37?text=AI+Art+1', title: 'Future Concept 01' },
     { src: 'https://via.placeholder.com/600x400/1a1a1a/d4af37?text=AI+Art+2', title: 'Neon Portrait' },
     { src: 'https://via.placeholder.com/600x400/050505/f1c40f?text=AI+Art+3', title: 'Abstract Gold' },
@@ -23,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         images.forEach(image => {
             const card = document.createElement('div');
             card.className = 'card';
+            // Use innerHTML to create structure. Ensure image.src and image.title are safe strings.
             card.innerHTML = `
                 <img src="${image.src}" alt="${image.title}" class="card-image" loading="lazy">
                 <div class="card-overlay">
@@ -41,19 +40,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Modal Functions
     function openLightbox(src) {
+        if (!lightbox) return;
         lightbox.style.display = 'flex';
         // Use timeout to allow display:flex to apply before adding active class for fade
         setTimeout(() => lightbox.classList.add('active'), 10);
 
-        lightboxImg.src = src;
-        downloadBtn.href = src; // Set download link
+        if (lightboxImg) lightboxImg.src = src;
+        if (downloadBtn) downloadBtn.href = src; // Set download link
     }
 
     function closeLightbox() {
+        if (!lightbox) return;
         lightbox.classList.remove('active');
         setTimeout(() => {
             lightbox.style.display = 'none';
-            lightboxImg.src = '';
+            if (lightboxImg) lightboxImg.src = '';
         }, 300); // Wait for transition
     }
 
@@ -72,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Escape key to close
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+        if (e.key === 'Escape' && lightbox && lightbox.classList.contains('active')) {
             closeLightbox();
         }
     });

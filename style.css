@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 :root {
     --bg-color: #050505;
     --card-bg: rgba(20, 20, 20, 0.6);
@@ -16,15 +18,11 @@ body {
     margin: 0;
     padding: 0;
     background-color: #000;
-    /* Fallback */
-    background-color: var(--bg-color);
 }
 
 body {
     background: radial-gradient(circle at top center, #1a1a00 0%, #050505 40%, #000000 100%);
     background-attachment: fixed;
-    color: #f0f0f0;
-    /* Fallback */
     color: var(--text-main);
     font-family: var(--font-main);
     line-height: 1.6;
@@ -265,7 +263,6 @@ footer {
     font-weight: 700;
     letter-spacing: 1px;
     border-radius: 4px;
-    /* More professional, less rounded */
     transition: all 0.3s ease;
     text-transform: uppercase;
     font-size: 0.95rem;
