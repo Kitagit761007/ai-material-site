@@ -66,12 +66,26 @@ document.addEventListener('DOMContentLoaded', () => {
         images.forEach(image => {
             const card = document.createElement('div');
             card.className = 'card';
-            card.innerHTML = `
-                <img src="${image.src}" alt="${image.title}" class="card-image" loading="lazy">
-                <div class="card-overlay">
-                    <div class="card-title">${image.title}</div>
-                </div>
-            `;
+            // Image Element
+            const img = document.createElement('img');
+            img.src = image.src;
+            img.alt = image.title;
+            img.className = 'card-image';
+            img.loading = 'lazy';
+
+            // Overlay Element
+            const overlay = document.createElement('div');
+            overlay.className = 'card-overlay';
+
+            const title = document.createElement('div');
+            title.className = 'card-title';
+            title.textContent = image.title;
+
+            overlay.appendChild(title);
+
+            // Assemble Card
+            card.appendChild(img);
+            card.appendChild(overlay);
 
             // Click event for lightbox
             card.addEventListener('click', () => {
