@@ -1,6 +1,40 @@
 // Configuration: Add your image filenames here
 // Newest images should be at the TOP of this list.
 const images = [
+    // Cyberpunk City Collection (Coming Soon)
+    {
+        src: 'https://via.placeholder.com/800x450/000022/00ffff?text=Cyberpunk+City+1',
+        title: 'Neon Skyscraper Night',
+        description: 'ネオンサインが輝く雨夜のサイバーパンク都市。摩天楼と空飛ぶ車が織りなす近未来の情景。青とピンクの照明がサイバーな雰囲気を演出する高品質背景素材。'
+    },
+    {
+        src: 'https://via.placeholder.com/800x450/050011/ff00ff?text=Cyberpunk+City+2',
+        title: 'Futuristic Street Level',
+        description: 'テクノロジーと雑多な屋台が融合した未来のストリート。濡れた路面に反射する光と、行き交う人々の活気が感じられるシネマティックなコンセプトアート。'
+    },
+    {
+        src: 'https://via.placeholder.com/800x450/001100/00ff00?text=Cyberpunk+City+3',
+        title: 'Cyber Alleyway',
+        description: '高層ビルの谷間に広がるサイバーパンクな裏路地。配管やケーブル、ホログラム広告が詳細に描かれた、没入感のあるダークでクールな背景イラスト。'
+    },
+
+    // Fantasy Forest Collection (Batch 2 - Remaining)
+    {
+        src: 'https://via.placeholder.com/800x450/002200/00ff00?text=Forest+Ruins',
+        title: 'Mossy Ancient Ruins',
+        description: '苔むした石造りの遺跡とファンタジーの森が融合した風景。木漏れ日が差し込む静寂な空間は、冒険の始まりや古代の謎を感じさせる素材です。'
+    },
+    {
+        src: 'https://via.placeholder.com/800x450/110022/ff00ff?text=Mushroom+Grove',
+        title: 'Glowing Mushroom Grove',
+        description: '巨大な発光キノコが群生する神秘的な森の奥地。シアンとマゼンタの胞子が舞う幻想的な世界観は、魔法使いの住処や異世界の表現に最適です。'
+    },
+    {
+        src: 'https://via.placeholder.com/800x450/001122/00ffff?text=Crystal+Cave',
+        title: 'Hidden Crystal Cave',
+        description: '森の奥深くに隠されたクリスタル洞窟の入り口。輝く鉱石と植物が共生する美しい光景。RPGや探索ゲームのワンシーンのような高品質イラスト。'
+    },
+
     // Fantasy Forest Collection (Batch 2)
     {
         src: 'uploads/forest_02_giant_tree.png',
