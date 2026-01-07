@@ -67,11 +67,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const card = document.createElement('div');
             card.className = 'card';
             card.innerHTML = `
-    < img src = "${image.src}" alt = "${image.title}" class="card-image" loading = "lazy" >
-        <div class="card-overlay">
-            <div class="card-title">${image.title}</div>
-        </div>
-`;
+                <img src="${image.src}" alt="${image.title}" class="card-image" loading="lazy">
+                <div class="card-overlay">
+                    <div class="card-title">${image.title}</div>
+                </div>
+            `;
 
             // Click event for lightbox
             card.addEventListener('click', () => {
