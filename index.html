@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>マイタスク</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Google Identity Services Library -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <!-- Google API Client Library -->
+    <script src="https://apis.google.com/js/api.js"></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>マイタスク</h1>
+            <p class="date-display">2026年1月7日</p>
+            <button id="auth-btn" class="auth-btn">
+                <span class="icon">📅</span> Googleカレンダーと連携
+            </button>
+        </header>
+
+        <main>
+            <!-- Input Area -->
+            <div class="input-container">
+                <div class="input-row main-input">
+                    <input type="text" id="todo-input" placeholder="新しいタスクを入力..." aria-label="新しいタスク">
+                </div>
+                <div class="input-row sub-inputs">
+                    <select id="priority-input" aria-label="優先度">
+                        <option value="">優先度: なし</option>
+                        <option value="1">優先度: 1 (高)</option>
+                        <option value="2">優先度: 2 (中)</option>
+                        <option value="3">優先度: 3 (低)</option>
+                    </select>
+                    <div class="time-inputs">
+                        <input type="time" id="start-time" aria-label="開始時間">
+                        <span>〜</span>
+                        <input type="time" id="end-time" aria-label="終了時間">
+                    </div>
+                    <button id="add-btn">追加</button>
+                </div>
+            </div>
+
+            <!-- Filters -->
+            <div class="filters-container">
+                <div class="filters-row">
+                    <button class="filter-btn active" data-filter="all">すべて</button>
+                    <button class="filter-btn" data-filter="active">未完了</button>
+                    <button class="filter-btn" data-filter="completed">完了済み</button>
+                </div>
+                <div class="filters-row priority-filters">
+                    <button class="filter-btn" data-filter="p1">優先度1</button>
+                    <button class="filter-btn" data-filter="p2">優先度2</button>
+                    <button class="filter-btn" data-filter="p3">優先度3</button>
+                </div>
+            </div>
+
+            <ul id="todo-list" class="todo-list">
+                <!-- タスクはここにJavaScriptで追加されます -->
+            </ul>
+        </main>
+
+        <footer class="app-footer">
+            <p><span id="items-left">0</span> 件の未完了タスク</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
