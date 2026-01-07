@@ -2,7 +2,7 @@
 <html lang="ja">
 
 <head>
-    <meta charset="UTF-8"> <!-- Definitely UTF-8 -->
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Material Gallery | Premium Illustration Assets</title>
     <!-- Google Fonts -->
@@ -11,8 +11,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@400;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=2.1">
-    <script src="script.js?v=2.1" defer></script>
+    <link rel="stylesheet" href="style.css?v=2.2">
+    <script src="script.js?v=2.2" defer></script>
 </head>
 
 <body>
@@ -52,8 +52,10 @@
     <div id="lightbox" class="modal">
         <span class="close-modal">&times;</span>
         <img class="modal-content" id="lightbox-img" alt="Full size view">
+        <!-- Description will be injected here by JS or static HTML below -->
+        <p id="lightbox-desc" class="lightbox-description"></p>
         <div class="modal-controls">
-            <a id="download-btn" class="btn" href="" download>Download</a>
+            <a id="download-btn" class="btn" href="" download>High Quality Download</a>
         </div>
     </div>
 

@@ -2,30 +2,46 @@
 // Newest images should be at the TOP of this list.
 const images = [
     // Test Image
-    { src: 'test_image_01.jpg', title: 'Autumn River (Test Image)' },
+    {
+        src: 'test_image_01.jpg',
+        title: 'Autumn River (Test Image)',
+        description: '美しい秋の川辺の風景。夕日が差し込む静かな情景をAIが生成しました。商用利用可能な高品質素材です。'
+    },
 
     // Placeholders
-    { src: 'https://via.placeholder.com/600x400/000000/d4af37?text=AI+Art+1', title: 'Future Concept 01' },
-    { src: 'https://via.placeholder.com/600x400/1a1a1a/d4af37?text=AI+Art+2', title: 'Neon Portrait' },
-    { src: 'https://via.placeholder.com/600x400/050505/f1c40f?text=AI+Art+3', title: 'Abstract Gold' },
-    { src: 'https://via.placeholder.com/600x400/000000/d4af37?text=AI+Art+4', title: 'Landscape' },
-    { src: 'https://via.placeholder.com/600x400/1a1a1a/d4af37?text=AI+Art+5', title: 'Character Design' },
-    { src: 'https://via.placeholder.com/600x400/050505/f1c40f?text=AI+Art+6', title: 'Cyber Animal' },
+    { src: 'https://via.placeholder.com/600x400/000000/d4af37?text=AI+Art+1', title: 'Future Concept 01', description: '近未来の都市構想を描いたコンセプトアート。' },
+    { src: 'https://via.placeholder.com/600x400/1a1a1a/d4af37?text=AI+Art+2', title: 'Neon Portrait', description: 'ネオンライトに照らされたポートレート。' },
+    { src: 'https://via.placeholder.com/600x400/050505/f1c40f?text=AI+Art+3', title: 'Abstract Gold', description: '金と黒の抽象的なパターンアート。' },
+    { src: 'https://via.placeholder.com/600x400/000000/d4af37?text=AI+Art+4', title: 'Landscape', description: '幻想的な山岳風景のイラスト。' },
+    { src: 'https://via.placeholder.com/600x400/1a1a1a/d4af37?text=AI+Art+5', title: 'Character Design', description: 'ゲームや小説に使えるキャラクターデザイン。' },
+    { src: 'https://via.placeholder.com/600x400/050505/f1c40f?text=AI+Art+6', title: 'Cyber Animal', description: 'サイバネティックな装飾を施された動物のイラスト。' },
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
     const gallery = document.getElementById('gallery');
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxDesc = document.getElementById('lightbox-desc'); // New description element
     const downloadBtn = document.getElementById('download-btn');
     const closeBtn = document.querySelector('.close-modal');
+
+    // Create description element if it doesn't exist (for safety if HTML isn't updated simultaneously)
+    if (!lightboxDesc && lightbox) {
+        const descP = document.createElement('p');
+        descP.id = 'lightbox-desc';
+        descP.className = 'lightbox-description';
+        // Insert after image, before controls
+        const controls = lightbox.querySelector('.modal-controls');
+        if (controls) {
+            lightbox.insertBefore(descP, controls);
+        }
+    }
 
     // Render Gallery
     if (gallery) {
         images.forEach(image => {
             const card = document.createElement('div');
             card.className = 'card';
-            // Use innerHTML to create structure. Ensure image.src and image.title are safe strings.
             card.innerHTML = `
                 <img src="${image.src}" alt="${image.title}" class="card-image" loading="lazy">
                 <div class="card-overlay">
@@ -35,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Click event for lightbox
             card.addEventListener('click', () => {
-                openLightbox(image.src);
+                openLightbox(image);
             });
 
             gallery.appendChild(card);
@@ -43,18 +59,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Modal Functions
-    function openLightbox(src) {
+    function openLightbox(imageObj) {
         if (!lightbox) return;
-        lightbox.style.display = 'flex';
-        // Use timeout to allow display:flex to apply before adding active class for fade
-        setTimeout(() => lightbox.classList.add('active'), 10);
 
-        if (lightboxImg) lightboxImg.src = src;
+        lightbox.style.display = 'flex';
+        // Smooth fade in
+        requestAnimationFrame(() => {
+            lightbox.classList.add('active');
+        });
+
+        if (lightboxImg) lightboxImg.src = imageObj.src;
+
+        // Update Description
+        const descEl = document.getElementById('lightbox-desc');
+        if (descEl) {
+            descEl.textContent = imageObj.description || imageObj.title;
+        }
 
         if (downloadBtn) {
-            downloadBtn.href = src; // Set download link path
-            // Extract filename for the download attribute
-            const filename = src.substring(src.lastIndexOf('/') + 1);
+            downloadBtn.href = imageObj.src;
+            const filename = imageObj.src.substring(imageObj.src.lastIndexOf('/') + 1);
             downloadBtn.setAttribute('download', filename);
         }
     }
