@@ -1,6 +1,18 @@
 // Configuration: Add your image filenames here
 // Newest images should be at the TOP of this list.
 const images = [
+    // Fantasy Forest Collection (Batch 2)
+    {
+        src: 'uploads/forest_02_giant_tree.png',
+        title: 'Ancient Giant Tree',
+        description: '森の中心に佇む巨大な古木。樹皮に浮かぶ発光するルーン文字と、周囲を舞う精霊たちが神秘的な雰囲気を醸し出す、ファンタジーの王道的な風景。'
+    },
+    {
+        src: 'uploads/forest_03_river_twilight.png',
+        title: 'Twilight Forest Stream',
+        description: '黄昏時の森を流れる静かな小川。水面が微かに発光し、蛍が舞う幻想的な空間。紫と青のグラデーションが美しい、落ち着いた雰囲気の背景素材。'
+    },
+
     // Japanese Texture Collection
     {
         src: 'uploads/japanese_texture_gold_black.png',
