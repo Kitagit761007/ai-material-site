@@ -1,81 +1,14 @@
-<!DOCTYPE html>
-<html lang="ja">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Material Prime | Premium Gaming Backgrounds</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@400;700&family=Orbitron:wght@500;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=5.3">
-    <script src="script.js?v=5.3" defer></script>
-</head>
-
-<body>
-
-    <header>
-        <div class="logo">AI MATERIAL PRIME</div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section class="hero">
-            <h1>PREMIUM GAMING BACKGROUNDS</h1>
-            <p class="hero-subtitle">ロイヤリティフリー・商用利用可能な高品質AI生成背景素材<br>Desktop (16:9) & Mobile (9:16) Ready.</p>
-        </section>
-
-        <!-- Desktop Section -->
-        <section class="gallery-section">
-            <h2 class="section-title">
-                DESKTOP WALLPAPERS <span class="aspect-ratio">(16:9)</span>
-                <span class="license-badge">Royalty-Free / Commercial Use OK</span>
-            </h2>
-            <div id="gallery-desktop" class="gallery-grid desktop-grid">
-                <!-- JS injects items here -->
+<section id="desktop-wallpapers" class="py-20 bg-gray-900">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-white mb-12">Desktop Wallpapers (16:9)</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-gray-800 rounded-xl overflow-hidden shadow-2xl">
+                <img src="./images/landscape/gold-gaming-room-169-01.jpg" alt="Gold Gaming Room 01" class="w-full h-auto" onerror="this.src='https://via.placeholder.com/400x225?text=Loading+Error'">
+                <div class="p-4">
+                    <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">ロイヤリティフリー</span>
+                    <p class="text-gray-400 mt-2">Premium Gold Background #01</p>
+                </div>
             </div>
-        </section>
-
-        <!-- Mobile Section -->
-        <section class="gallery-section">
-            <h2 class="section-title">
-                MOBILE WALLPAPERS <span class="aspect-ratio">(9:16)</span>
-                <span class="license-badge">Royalty-Free / Commercial Use OK</span>
-            </h2>
-            <div id="gallery-mobile" class="gallery-grid mobile-grid">
-                <!-- JS injects items here -->
             </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-links">
-            <a href="privacy.html">プライバシーポリシー</a>
-            <a href="terms.html">利用規約</a>
-            <a href="contact.html">お問い合わせ</a>
-            <a href="terms.html#license-policy" style="color: var(--accent-color);">ライセンス詳細 (License Policy)</a>
-        </div>
-        <p class="copyright">&copy; 2026 AI Material Prime. All rights reserved.</p>
-    </footer>
-
-    <!-- Lightbox Modal -->
-    <div id="lightbox" class="modal">
-        <span class="close-modal">&times;</span>
-        <img class="modal-content" id="lightbox-img" alt="Full size view">
-        <p id="lightbox-desc" class="lightbox-description"></p>
-        <div class="modal-controls">
-            <a id="download-btn" class="btn" href="" download>High Quality Download</a>
-        </div>
     </div>
-
-</body>
-
-</html>
+</section>
