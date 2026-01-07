@@ -1,6 +1,23 @@
 // Configuration: Add your image filenames here
 // Newest images should be at the TOP of this list.
 const images = [
+    // Japanese Texture Collection
+    {
+        src: 'uploads/japanese_texture_gold_black.png',
+        title: 'Luxurious Gold Leaf Washi',
+        description: '黒と金箔のコントラストが美しい、高級感あふれる和紙テクスチャ。伝統的な京友禅のような趣があり、年賀状や和風デザインの背景に最適です。'
+    },
+    {
+        src: 'uploads/japanese_texture_sakura_pink.png',
+        title: 'Sakura Washi Texture',
+        description: '淡いピンク色の和紙に、繊細な桜の花びらが舞う上品なデザイン。春の訪れを感じさせる、優しく華やかな背景素材です。'
+    },
+    {
+        src: 'uploads/japanese_texture_indigo_pattern.png',
+        title: 'Indigo Seigaiha Pattern',
+        description: '伝統的な青海波（せいがいは）文様をモダンにアレンジした、藍染め風のテクスチャ。落ち着いた色合いで、ビジネスや和モダンなデザインに使いやすい一枚です。'
+    },
+
     // Fantasy Forest (Generated)
     {
         src: 'uploads/forest_01.png',
@@ -50,11 +67,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const card = document.createElement('div');
             card.className = 'card';
             card.innerHTML = `
-                <img src="${image.src}" alt="${image.title}" class="card-image" loading="lazy">
-                <div class="card-overlay">
-                    <div class="card-title">${image.title}</div>
-                </div>
-            `;
+    < img src = "${image.src}" alt = "${image.title}" class="card-image" loading = "lazy" >
+        <div class="card-overlay">
+            <div class="card-title">${image.title}</div>
+        </div>
+`;
 
             // Click event for lightbox
             card.addEventListener('click', () => {
