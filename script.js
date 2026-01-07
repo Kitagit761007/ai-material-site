@@ -1,6 +1,13 @@
 // Configuration: Add your image filenames here
 // Newest images should be at the TOP of this list.
 const images = [
+    // Fantasy Forest (Generated)
+    {
+        src: 'uploads/forest_01.png',
+        title: 'Fantasy Forest Background',
+        description: '幻想的な森の背景。発光する植物と古代の樹木が織りなす神秘的な風景。ファンタジー作品やゲーム背景に最適な高品質AIイラスト素材。'
+    },
+
     // Test Image
     {
         src: 'test_image_01.jpg',
