@@ -1,14 +1,52 @@
-<section id="desktop-wallpapers" class="py-20 bg-gray-900">
-    <div class="container mx-auto px-6 text-center">
-        <h2 class="text-3xl font-bold text-white mb-12">Desktop Wallpapers (16:9)</h2>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI MATERIAL PRIME - 高品質AI生成背景素材サイト</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Orbitron', sans-serif; background-color: #0f172a; color: white; }
+        .hero-gradient { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); }
+    </style>
+</head>
+<body>
+    <header class="py-6 px-10 flex justify-between items-center bg-black/50 sticky top-0 z-50">
+        <h1 class="text-2xl font-bold tracking-widest text-yellow-500">AI MATERIAL PRIME</h1>
+    </header>
+
+    <section class="hero-gradient py-20 text-center">
+        <h2 class="text-4xl md:text-6xl font-bold mb-4">PREMIUM GAMING BACKGROUNDS</h2>
+        <p class="text-gray-400">ロイヤリティフリー・商用利用可能な高品質AI生成背景素材</p>
+    </section>
+
+    <section id="desktop-wallpapers" class="py-16 container mx-auto px-6">
+        <h3 class="text-2xl font-bold border-l-4 border-yellow-500 pl-4 mb-10">DESKTOP WALLPAPERS (16:9)</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-gray-800 rounded-xl overflow-hidden shadow-2xl">
-                <img src="./images/landscape/gold-gaming-room-169-01.jpg" alt="Gold Gaming Room 01" class="w-full h-auto" onerror="this.src='https://via.placeholder.com/400x225?text=Loading+Error'">
-                <div class="p-4">
-                    <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">ロイヤリティフリー</span>
-                    <p class="text-gray-400 mt-2">Premium Gold Background #01</p>
-                </div>
-            </div>
-            </div>
-    </div>
-</section>
+            <script>
+                for(let i=1; i<=12; i++) {
+                    const num = i.toString().padStart(2, '0');
+                    document.write(`
+                        <div class="bg-gray-800 rounded-lg overflow-hidden shadow-xl">
+                            <img src="images/landscape/gold-gaming-room-169-${num}.jpg" class="w-full h-48 object-cover" alt="Gold Gaming Room ${num}">
+                            <div class="p-4">
+                                <div class="flex gap-2 mb-2">
+                                    <span class="bg-blue-600 text-[10px] px-2 py-0.5 rounded">ロイヤリティフリー</span>
+                                    <span class="bg-green-600 text-[10px] px-2 py-0.5 rounded">商用利用可</span>
+                                </div>
+                                <p class="text-sm text-gray-300">Premium Gold Background #${num}</p>
+                                <a href="images/landscape/gold-gaming-room-169-${num}.jpg" download class="mt-4 block text-center bg-yellow-600 hover:bg-yellow-500 text-white text-xs py-2 rounded transition">ダウンロード</a>
+                            </div>
+                        </div>
+                    `);
+                }
+            </script>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center text-gray-500 text-xs border-t border-gray-800">
+        &copy; 2026 AI MATERIAL PRIME. All Rights Reserved.
+    </footer>
+</body>
+</html>
