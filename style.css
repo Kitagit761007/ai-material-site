@@ -84,11 +84,12 @@ nav a:hover {
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
-.hero p {
-    font-size: 1rem;
-    color: #888;
+.hero p.hero-subtitle {
+    font-size: 1.1rem;
+    color: #ccc;
     max-width: 600px;
     margin: 0 auto;
+    font-weight: 500;
 }
 
 /* Gallery Section */
@@ -105,7 +106,21 @@ nav a:hover {
     color: #fff;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 1rem;
+}
+
+.license-badge {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid var(--accent-color);
+    padding: 0.2rem 0.8rem;
+    border-radius: 20px;
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-left: auto;
+    /* Push to right if space permits */
 }
 
 .aspect-ratio {
