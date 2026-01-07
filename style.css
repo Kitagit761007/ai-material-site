@@ -180,6 +180,37 @@ nav a:hover {
     transform: scale(1.05);
 }
 
+.card-badge-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-end;
+    z-index: 10;
+}
+
+.card-badge {
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: bold;
+    color: #fff;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.badge-royalty {
+    background: rgba(0, 100, 255, 0.7);
+    border: 1px solid #00aaff;
+}
+
+.badge-commercial {
+    background: rgba(0, 200, 50, 0.7);
+    border: 1px solid #00ff66;
+}
+
 .card-overlay {
     position: absolute;
     bottom: 0;

@@ -2,17 +2,20 @@
 // Newest images should be at the TOP of each category.
 
 const images = [
-    // 【ここに画像を追加してください】
-    // 'category' は 'desktop' (16:9) または 'mobile' (9:16) を指定してください。
-    // 例:
-    // {
-    //     src: 'uploads/desktop_cyberpunk.jpg',
-    //     category: 'desktop',
-    //     title: 'Neon City',
-    //     description: 'サイバーパンクな都市の夜景。'
-    // },
-
-    // 現在は画像がありません。画像をアップロードしてここに追加してください。
+    // 12 Landscape Images (Desktop 16:9)
+    // Please ensure files are named landscape_01.jpg to landscape_12.jpg in images/landscape/ folder.
+    { src: 'images/landscape/landscape_01.jpg', category: 'desktop', title: 'Gaming Landscape 01', description: '広大なSF世界の風景。' },
+    { src: 'images/landscape/landscape_02.jpg', category: 'desktop', title: 'Gaming Landscape 02', description: 'サイバーパンクシティの全景。' },
+    { src: 'images/landscape/landscape_03.jpg', category: 'desktop', title: 'Gaming Landscape 03', description: '幻想的な古代遺跡。' },
+    { src: 'images/landscape/landscape_04.jpg', category: 'desktop', title: 'Gaming Landscape 04', description: 'ネオン輝く夜のストリート。' },
+    { src: 'images/landscape/landscape_05.jpg', category: 'desktop', title: 'Gaming Landscape 05', description: '近未来の宇宙ステーション。' },
+    { src: 'images/landscape/landscape_06.jpg', category: 'desktop', title: 'Gaming Landscape 06', description: '神秘的な青い森。' },
+    { src: 'images/landscape/landscape_07.jpg', category: 'desktop', title: 'Gaming Landscape 07', description: '夕暮れのバトルフィールド。' },
+    { src: 'images/landscape/landscape_08.jpg', category: 'desktop', title: 'Gaming Landscape 08', description: '氷に覆われた惑星。' },
+    { src: 'images/landscape/landscape_09.jpg', category: 'desktop', title: 'Gaming Landscape 09', description: '荒廃した都市の廃墟。' },
+    { src: 'images/landscape/landscape_10.jpg', category: 'desktop', title: 'Gaming Landscape 10', description: 'ドラゴンの住む渓谷。' },
+    { src: 'images/landscape/landscape_11.jpg', category: 'desktop', title: 'Gaming Landscape 11', description: '高層ビルの屋上からの眺め。' },
+    { src: 'images/landscape/landscape_12.jpg', category: 'desktop', title: 'Gaming Landscape 12', description: 'デジタル空間の抽象背景。' },
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -58,6 +61,21 @@ document.addEventListener('DOMContentLoaded', () => {
             img.className = 'card-image';
             img.loading = 'lazy';
 
+            // Add Badge Container
+            const badgeContainer = document.createElement('div');
+            badgeContainer.className = 'card-badge-container';
+
+            const badge1 = document.createElement('span');
+            badge1.className = 'card-badge badge-royalty';
+            badge1.textContent = 'ロイヤリティフリー';
+
+            const badge2 = document.createElement('span');
+            badge2.className = 'card-badge badge-commercial';
+            badge2.textContent = '商用利用可';
+
+            badgeContainer.appendChild(badge1);
+            badgeContainer.appendChild(badge2);
+
             const overlay = document.createElement('div');
             overlay.className = 'card-overlay';
 
@@ -67,6 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             overlay.appendChild(title);
             card.appendChild(img);
+            card.appendChild(badgeContainer); // Add badges to card
             card.appendChild(overlay);
 
             card.addEventListener('click', () => {
