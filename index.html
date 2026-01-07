@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI MATERIAL PRIME - 高品質AI生成背景素材サイト</title>
+    <title>AI MATERIAL PRIME - 高品質AI生成背景素材</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -11,93 +11,56 @@
         .hero-gradient { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); }
         .image-card img { transition: transform 0.3s ease; }
         .image-card:hover img { transform: scale(1.05); }
-        /* モーダル表示のアニメーション */
-        #imageModal { transition: opacity 0.3s ease; }
-        .hidden { display: none; }
+        #imageModal { display: none; }
     </style>
 </head>
 <body>
     <header class="py-6 px-10 flex justify-between items-center bg-black/50 sticky top-0 z-50 backdrop-blur-md">
         <h1 class="text-2xl font-bold tracking-widest text-yellow-500">AI MATERIAL PRIME</h1>
-        <nav class="hidden md:block">
-            <a href="#desktop-wallpapers" class="text-xs text-gray-300 hover:text-yellow-500 transition mx-4">DESKTOP</a>
-            <a href="#" class="text-xs text-gray-300 hover:text-yellow-500 transition mx-4">MOBILE</a>
-        </nav>
     </header>
 
-    <section class="hero-gradient py-24 text-center border-b border-gray-800">
-        <h2 class="text-4xl md:text-6xl font-bold mb-4 tracking-tighter">PREMIUM GAMING BACKGROUNDS</h2>
-        <p class="text-gray-400 max-w-2xl mx-auto px-6">ロイヤリティフリー・商用利用可能な高品質AI生成背景素材。あなたのクリエイティブを最高峰のゴールド・ゲーミングスタイルへ。</p>
+    <section class="hero-gradient py-20 text-center">
+        <h2 class="text-4xl font-bold mb-4">PREMIUM GAMING BACKGROUNDS</h2>
+        <p class="text-gray-400">ロイヤリティフリー・商用利用可能な高品質AI生成背景素材</p>
     </section>
 
     <section id="desktop-wallpapers" class="py-16 container mx-auto px-6">
-        <div class="flex items-center justify-between mb-12">
-            <h3 class="text-2xl font-bold border-l-4 border-yellow-500 pl-4">DESKTOP WALLPAPERS (16:9)</h3>
-            <span class="text-xs text-gray-500">Total: 12 Assets</span>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <script>
-                // 12枚の画像を生成
-                for(let i=1; i<=12; i++) {
-                    const num = i.toString().padStart(2, '0');
-                    const imgPath = `images/landscape/gold-gaming-room-169-${num}.jpg`;
-                    document.write(`
-                        <div class="image-card bg-gray-800 rounded-xl overflow-hidden shadow-2xl border border-gray-700 flex flex-col">
-                            <div class="relative group cursor-zoom-in" onclick="openModal('${imgPath}')">
-                                <img src="${imgPath}" class="w-full h-52 object-cover" alt="Gold Gaming Room ${num}">
-                                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                                    <span class="text-white text-sm border border-white px-4 py-2 rounded-full">拡大表示</span>
-                                </div>
-                            </div>
-                            <div class="p-5 flex-grow">
-                                <div class="flex gap-2 mb-3">
-                                    <span class="bg-blue-600/20 text-blue-400 text-[10px] font-bold px-2 py-1 rounded border border-blue-600/30">ロイヤリティフリー</span>
-                                    <span class="bg-green-600/20 text-green-400 text-[10px] font-bold px-2 py-1 rounded border border-green-600/30">商用利用可</span>
-                                </div>
-                                <p class="text-sm text-gray-300 font-medium">Premium Gold Background #${num}</p>
-                                <a href="${imgPath}" download class="mt-5 block text-center bg-yellow-600 hover:bg-yellow-500 text-white text-xs font-bold py-3 rounded-lg transition shadow-lg shadow-yellow-900/20">無料ダウンロード</a>
-                            </div>
-                        </div>
-                    `);
-                }
-            </script>
-        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" id="gallery">
+            </div>
     </section>
 
-    <div id="imageModal" class="fixed inset-0 z-[100] hidden bg-black/95 flex items-center justify-center p-4 md:p-10 cursor-zoom-out" onclick="closeModal()">
-        <div class="relative max-w-7xl w-full h-full flex items-center justify-center">
-            <img id="modalImage" src="" class="max-w-full max-h-full rounded-lg shadow-2xl border border-gray-800">
-            <button class="absolute top-0 right-0 text-white text-4xl p-4 hover:text-yellow-500 transition">&times;</button>
-            <p class="absolute bottom-[-40px] text-gray-400 text-sm">クリックで閉じる</p>
+    <footer class="py-10 text-center text-gray-500 border-t border-gray-900 mt-20">
+        <div class="flex justify-center gap-6 mb-4 text-xs">
+            <a href="about.html" class="hover:text-yellow-500">運営者情報</a>
+            <a href="privacy.html" class="hover:text-yellow-500">プライバシーポリシー</a>
+            <a href="contact.html" class="hover:text-yellow-500">お問い合わせ</a>
         </div>
-    </div>
-
-    <footer class="py-16 text-center text-gray-500 border-t border-gray-900 mt-20">
-        <p class="text-lg font-bold text-yellow-500 mb-4">AI MATERIAL PRIME</p>
-        <p class="text-[10px] tracking-widest uppercase mb-2">High-Quality AI Generated Assets</p>
         <p class="text-[10px]">&copy; 2026 AI MATERIAL PRIME. All Rights Reserved.</p>
     </footer>
 
+    <div id="imageModal" class="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4" onclick="this.style.display='none'">
+        <img id="modalImage" src="" class="max-w-full max-h-full rounded-lg shadow-2xl border border-gray-800">
+    </div>
+
     <script>
+        const gallery = document.getElementById('gallery');
+        for(let i=1; i<=12; i++) {
+            const num = i.toString().padStart(2, '0');
+            const imgPath = `./images/landscape/gold-gaming-room-169-${num}.jpg`;
+            gallery.innerHTML += `
+                <div class="image-card bg-gray-800 rounded-xl overflow-hidden shadow-2xl border border-gray-700">
+                    <img src="${imgPath}" class="w-full h-52 object-cover cursor-pointer" onclick="openModal('${imgPath}')">
+                    <div class="p-5 text-center">
+                        <a href="${imgPath}" download class="inline-block w-full bg-yellow-600 hover:bg-yellow-500 text-white text-xs font-bold py-3 rounded-lg transition">ダウンロード</a>
+                    </div>
+                </div>
+            `;
+        }
         function openModal(src) {
             const modal = document.getElementById('imageModal');
-            const modalImg = document.getElementById('modalImage');
+            document.getElementById('modalImage').src = src;
             modal.style.display = 'flex';
-            modalImg.src = src;
-            document.body.style.overflow = 'hidden'; // 背後のスクロールを止める
         }
-
-        function closeModal() {
-            const modal = document.getElementById('imageModal');
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto'; // スクロールを再開
-        }
-
-        // ESCキーで閉じる機能
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeModal();
-        });
     </script>
 </body>
 </html>
