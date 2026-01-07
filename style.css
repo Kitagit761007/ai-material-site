@@ -183,22 +183,28 @@ nav a:hover {
 .card-badge-container {
     position: absolute;
     top: 10px;
-    right: 10px;
+    left: 10px;
+    /* Moved to left to avoid potential overlap with other elements */
     display: flex;
     flex-direction: column;
     gap: 5px;
-    align-items: flex-end;
+    align-items: flex-start;
+    /* Align left */
     z-index: 10;
+    pointer-events: none;
+    /* Let clicks pass through to image */
 }
 
 .card-badge {
     font-size: 0.7rem;
-    padding: 2px 6px;
+    padding: 3px 8px;
     border-radius: 4px;
-    font-weight: bold;
+    font-weight: 600;
     color: #fff;
     backdrop-filter: blur(4px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+    /* Better readability */
 }
 
 .badge-royalty {
